@@ -18,7 +18,9 @@ SOURCES += main.cpp \
     error.cpp \
     user.cpp \
     frmmainmenu.cpp \
-    frmstartgame.cpp
+    frmstartgame.cpp \
+    highscore.cpp \
+    level.cpp
 
 HEADERS  += \
     frmlogin.h \
@@ -27,7 +29,9 @@ HEADERS  += \
     user.h \
     databaseanswer.h \
     frmmainmenu.h \
-    frmstartgame.h
+    frmstartgame.h \
+    level.h \
+    highscore.h
 
 FORMS    += \
     frmlogin.ui \

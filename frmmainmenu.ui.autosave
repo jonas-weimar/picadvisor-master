@@ -29,7 +29,7 @@
     <string notr="true">background-color: rgba(0,0,0,0)</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QPushButton" name="btnOpenAdministration">
@@ -60,7 +60,7 @@ color: white;</string>
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="picadvisorLogo">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -166,7 +166,7 @@ color: white;</string>
       <string>Logout here</string>
      </property>
     </widget>
-    <widget class="QListWidget" name="listWidget">
+    <widget class="QListWidget" name="lwShowHighscores">
      <property name="geometry">
       <rect>
        <x>700</x>
@@ -183,7 +183,7 @@ padding: 5px;
 color: white;</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="labelHighscores">
      <property name="geometry">
       <rect>
        <x>700</x>
@@ -202,7 +202,7 @@ color: white;</string>
       <string>Highscores</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox">
+    <widget class="QComboBox" name="cbxLevel">
      <property name="geometry">
       <rect>
        <x>700</x>
