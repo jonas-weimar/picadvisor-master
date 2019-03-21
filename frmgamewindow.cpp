@@ -11,7 +11,7 @@ FrmGameWindow::FrmGameWindow(QWidget *parent) :
     this->setWindowTitle(this->windowTitle);
     this->setFixedSize(QSize(1100,630));
 
-    // timers for updating ui, gamefield and turning rectangle
+    // timer for updating ui, gamefield and turning rectangle
     this->updateTimer = new QTimer(this);
     this->updateTimer->setInterval(1000);
     connect(this->updateTimer, SIGNAL(timeout()), this, SLOT(updateUITimer()));
@@ -27,6 +27,9 @@ FrmGameWindow::FrmGameWindow(QWidget *parent) :
 FrmGameWindow::~FrmGameWindow()
 {
     delete ui;
+    delete this->updateTimer;
+    delete this->gameTimer;
+    delete this->turnRect;
 }
 
 void FrmGameWindow::load()

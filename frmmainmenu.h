@@ -97,6 +97,8 @@ private slots:
 
     void on_btnDeleteHighscores_clicked();
 
+    void on_btnGoAdministration_3_clicked();
+
 private:
     Ui::FrmMainMenu *ui;
 

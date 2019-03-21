@@ -512,3 +512,8 @@ void FrmMainMenu::on_btnCreateImage_clicked()
     // reload lwShowUser
     this->loadShowImages();
 }
+
+void FrmMainMenu::on_btnGoAdministration_3_clicked()
+{
+    ui->mainStackedWidget->setCurrentIndex(2);
+}
