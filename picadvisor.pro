@@ -20,7 +20,15 @@ SOURCES += main.cpp \
     frmmainmenu.cpp \
     frmstartgame.cpp \
     highscore.cpp \
-    level.cpp
+    level.cpp \
+    highscoreliste.cpp \
+    levelliste.cpp \
+    gameimage.cpp \
+    imagecathegory.cpp \
+    imagelist.cpp \
+    imagecathegorylist.cpp \
+    frmgamewindow.cpp \
+    userlist.cpp
 
 HEADERS  += \
     frmlogin.h \
@@ -31,9 +39,18 @@ HEADERS  += \
     frmmainmenu.h \
     frmstartgame.h \
     level.h \
-    highscore.h
+    highscore.h \
+    highscoreliste.h \
+    levelliste.h \
+    gameimage.h \
+    imagecathegory.h \
+    imagelist.h \
+    imagecathegorylist.h \
+    frmgamewindow.h \
+    userlist.h
 
 FORMS    += \
     frmlogin.ui \
     frmmainmenu.ui \
-    frmstartgame.ui
+    frmstartgame.ui \
+    frmgamewindow.ui

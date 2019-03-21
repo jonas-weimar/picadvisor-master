@@ -3,10 +3,11 @@
 Level::Level(QVector<QVariant> model)
 {
     this->id = model[0].toInt();
-    this->created_at = model[1].toDate();
+    this->name = model[1].toString();
     this->sekUmdrehen = model[2].toInt();
     this->gedrehtUm = model[3].toInt();
     this->strafZeit = model[4].toInt();
+    this->created_at = model[5].toString();
 
     this->table = this->getTable();
 }
@@ -16,10 +17,8 @@ Level::Level(DatabaseAnswer<Level>* response)
     *this = *response->getObject();
 }
 
-DatabaseAnswer<Level>* Level::create(QString name, int sekUmdrehen, int gedrehtUm, int strafZeit)
+DatabaseAnswer<Level>* Level::create(QString name, int sekUmdrehen, int gedrehtUm, int strafZeit, Database* db)
 {
-    Database* db = new Database;
-
     DatabaseAnswer<Level>* response = db->execModel<Level>(Level::generateSaveModel(name, sekUmdrehen, gedrehtUm, strafZeit));
 
     if(response->hasError()){
@@ -27,8 +26,6 @@ DatabaseAnswer<Level>* Level::create(QString name, int sekUmdrehen, int gedrehtU
     } else {
         response = db->find<Level>(Level::generateFindModel(name, Level::getTable()));
     }
-
-    delete db;
 
     return response;
 }
@@ -38,9 +35,14 @@ QString Level::getTable()
     return "tblLevels";
 }
 
-QString Level::generateUpdateModel()
+QString Level::generateDeleteModel()
 {
-    return "";
+    return "DELETE FROM " + Level::getTable() + " WHERE name LIKE '" + this->getName() + "'";
+}
+
+QString Level::generateDeleteHighscoresModel(QString table)
+{
+    return "DELETE FROM " + table + " WHERE idLevel = " + QString::number(this->getId());
 }
 
 QString Level::generateFindModel(QString name, QString table)
@@ -50,7 +52,12 @@ QString Level::generateFindModel(QString name, QString table)
 
 QString Level::generateFindIdModel(int id, QString table)
 {
-    return "SELECT * FROM " + table + " WHERE id = " + id;
+    return "SELECT * FROM " + table + " WHERE id = " + QString::number(id);
+}
+
+QString Level::generateFindAllModel(QString table)
+{
+    return "SELECT * FROM " + table;
 }
 
 QString Level::generateSaveModel(QString name, int sekUmdrehen, int gedrehtUm, int strafZeit)
@@ -58,7 +65,5 @@ QString Level::generateSaveModel(QString name, int sekUmdrehen, int gedrehtUm, i
 
     QDate created_at = QDate::currentDate();
 
-    QString stmt = "INSERT INTO " + Level::getTable() + " (name, sekUmdrehen, gedrehtUm, strafZeit, created_at) VALUES ('" + name + "', " + sekUmdrehen + ", " + gedrehtUm + ", " + strafZeit + ", '" + created_at.toString() + "')";
-
-    return stmt;
+    return "INSERT INTO " + Level::getTable() + " (name, sekUmdrehen, gedrehtUm, strafZeit, created_at) VALUES ('" + name + "', " + QString::number(sekUmdrehen) + ", " + QString::number(gedrehtUm) + ", " + QString::number(strafZeit) + ", '" + created_at.toString() + "')";
 }

@@ -14,6 +14,7 @@ public:
     Database();
     Database(QString path);
     ~Database();
+    void reinit();
 
     template<class T> DatabaseAnswer<T>* execModel(QString model);
     template<class T> DatabaseAnswer<T>* find(QString model);
@@ -77,14 +78,21 @@ DatabaseAnswer<T>* Database::find(QString model)
     } else {
         ok = query.first();
 
-        // create QVector<QVariant> for results
-        for (int i = 0; i < query.record().count(); i++){
-            attributes.append(query.value(i));
-        }
+        if(ok) {
+            // create QVector<QVariant> for results
+            while(ok){
+                for (int i = 0; i < query.record().count(); i++){
+                    attributes.append(query.value(i));
+                }
+                ok = query.next();
+            }
 
-        // create model
-        T* modelPointer = new T(attributes);
-        response->setObject(modelPointer);
+            // create model
+            T* modelPointer = new T(attributes);
+            response->setObject(modelPointer);
+        } else {
+            response->setError("Query has zero entries.");
+        }
     }
 
     // close database connection

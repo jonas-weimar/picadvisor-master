@@ -21,6 +21,7 @@ FrmLogin::FrmLogin(QWidget *parent) :
 FrmLogin::~FrmLogin()
 {
     delete ui;
+    delete this->db;
 }
 
 void FrmLogin::on_btnLoginHelp_clicked()
@@ -68,6 +69,13 @@ void FrmLogin::on_btnLogin_clicked()
             // set previous context and set logged user
             context->setPrevious(this);
             context->setUser(result->getObject());
+            context->setDB(this->db);
+
+            // setup context
+            context->setUpNow();
+
+            // delete response
+            delete result;
 
             // show next context
             context->show();
@@ -75,4 +83,10 @@ void FrmLogin::on_btnLogin_clicked()
             Error(403, "Forbidden", "Your credentials couldn't be verified.");
         }
     }
+}
+
+void FrmLogin::on_edtPassword_returnPressed()
+{
+    // on enter check login credentials
+    this->on_btnLogin_clicked();
 }

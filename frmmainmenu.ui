@@ -29,7 +29,7 @@
     <string notr="true">background-color: rgba(0,0,0,0)</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>5</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QPushButton" name="btnOpenAdministration">
@@ -166,7 +166,7 @@ color: white;</string>
       <string>Logout here</string>
      </property>
     </widget>
-    <widget class="QListWidget" name="listWidget">
+    <widget class="QListWidget" name="lwHighscores">
      <property name="geometry">
       <rect>
        <x>700</x>
@@ -202,13 +202,13 @@ color: white;</string>
       <string>Highscores</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox">
+    <widget class="QComboBox" name="cbxLevels">
      <property name="geometry">
       <rect>
        <x>700</x>
-       <y>163</y>
-       <width>141</width>
-       <height>21</height>
+       <y>153</y>
+       <width>331</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -363,6 +363,897 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#ffffff;&quot;&gt;To play this game you need to choose a game mode. But what is a mode?&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#ffffff;&quot;&gt;A mode is the combination of the category and the level you choose. Depending on your picture category a mode can be hard even if you chose an easier level. Same way swapped. Hard level easy picture category may be hard as well.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_3">
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>201</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0,0,0,0);
+font-size: 30px;
+font-weight: 400;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>Picadvisor Logo</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnGoMenu_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>&lt; Main Menu</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnManageUsers">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>190</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>Manage Users</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnManageLevel">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>250</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>Manage Level</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnManageImages">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>310</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>Manage Images</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>140</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0,0,0,0);
+font-size: 25px;
+font-weight: 400;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>Administration</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="tbHowToPlay_2">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>200</y>
+       <width>411</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; color:#ffffff;&quot;&gt;This is the Picadvisor Administration Area. Be aware of that everything you change here has direct effects on the game. Click on the Menu buttons to look around. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>150</y>
+       <width>331</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0,0,0,0);
+font-size: 35px;
+font-weight: 400;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>About Administration</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_4">
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>201</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0,0,0,0);
+font-size: 30px;
+font-weight: 400;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>Picadvisor Logo</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnGoAdministration">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>&lt; Administration Menu</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="lwShowUsers">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>130</y>
+       <width>281</width>
+       <height>431</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="gbxChangeUser">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>130</y>
+       <width>201</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: 'white'</string>
+     </property>
+     <property name="title">
+      <string>Choose a User</string>
+     </property>
+     <widget class="QPushButton" name="btnDeleteUser">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: red;</string>
+      </property>
+      <property name="text">
+       <string>Delete User</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnBlockUser">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Block User</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnUnblockUser">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Unblock User</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLineEdit" name="edtUsername">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>160</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Username</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edtPassword">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>200</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Password</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnCreateNewUser">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>270</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: green;</string>
+     </property>
+     <property name="text">
+      <string>Create User</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>130</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white</string>
+     </property>
+     <property name="text">
+      <string>Create a new User</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="cbIsAdmin">
+     <property name="geometry">
+      <rect>
+       <x>720</x>
+       <y>240</y>
+       <width>87</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;</string>
+     </property>
+     <property name="text">
+      <string>isAdmin</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_5">
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>201</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0,0,0,0);
+font-size: 30px;
+font-weight: 400;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>Picadvisor Logo</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnGoAdministration_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>&lt; Administration Menu</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="lwShowLevel">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>130</y>
+       <width>281</width>
+       <height>431</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="gbxChangeLevel">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>130</y>
+       <width>201</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: 'white'</string>
+     </property>
+     <property name="title">
+      <string>Choose a Level</string>
+     </property>
+     <widget class="QPushButton" name="btnDeleteLevel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: red;</string>
+      </property>
+      <property name="text">
+       <string>Delete Level</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnDeleteHighscores">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: red;</string>
+      </property>
+      <property name="text">
+       <string>Delete Highscores</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLineEdit" name="edtLevelname">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>160</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Name</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>130</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white</string>
+     </property>
+     <property name="text">
+      <string>Create a new Level</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edtTurnedDeg">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>200</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Turned(deg)</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edtLevelRectTurn">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>160</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Rect Turn(s)</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edtPunitiveTime">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>200</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>punituve time</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnCreateLevel">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>250</y>
+       <width>241</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: green;</string>
+     </property>
+     <property name="text">
+      <string>Create Level</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_6">
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>201</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0,0,0,0);
+font-size: 30px;
+font-weight: 400;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>Picadvisor Logo</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnGoAdministration_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>&lt; Administration Menu</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="lwShowImages">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>130</y>
+       <width>281</width>
+       <height>431</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="gbxChangeImage">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>130</y>
+       <width>201</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: 'white'</string>
+     </property>
+     <property name="title">
+      <string>Choose an Image</string>
+     </property>
+     <widget class="QPushButton" name="btnDeleteImage">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: red;</string>
+      </property>
+      <property name="text">
+       <string>Delete Image</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLineEdit" name="edtImageCathegory">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>240</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Cathegory</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edtImageSolution">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>200</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Solution</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_15">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>130</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white</string>
+     </property>
+     <property name="text">
+      <string>Create a new Level</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnOpenFileDialog">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>160</y>
+       <width>181</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 12px;
+font-weight: 500;
+padding: 5px;
+color: white;</string>
+     </property>
+     <property name="text">
+      <string>Choose Image</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnCreateImage">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>280</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255,255,255,0.5);
+border: 2px solid rgba(0,0,0,0);
+border-radius: 15px;
+font-size: 15px;
+font-weight: 500;
+padding: 5px;
+color: green;</string>
+     </property>
+     <property name="text">
+      <string>Create Image</string>
      </property>
     </widget>
    </widget>

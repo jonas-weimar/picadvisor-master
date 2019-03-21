@@ -24,3 +24,13 @@ Database::~Database()
 {
 
 }
+
+void Database::reinit()
+{
+    // create database path
+    this->path = QApplication::applicationDirPath() + "/database/administration.sqlite";
+
+    // initialise database with given path
+    this->db = QSqlDatabase::addDatabase("QSQLITE");
+    this->db.setDatabaseName(this->path);
+}

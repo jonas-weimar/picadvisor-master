@@ -11,6 +11,7 @@ public:
     DatabaseAnswer()
     {
         this->error = false;
+        this->errorText = "";
     }
 
     void setError(QString error)

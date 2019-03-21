@@ -27,6 +27,8 @@ private slots:
 
     void on_btnLogin_clicked();
 
+    void on_edtPassword_returnPressed();
+
 private:
     Ui::FrmLogin *ui;
 

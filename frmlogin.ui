@@ -119,7 +119,7 @@ padding: 5px;
 color: white;</string>
    </property>
    <property name="text">
-    <string/>
+    <string>admin</string>
    </property>
    <property name="placeholderText">
     <string>Username</string>
@@ -146,7 +146,7 @@ color: white;</string>
     <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData</set>
    </property>
    <property name="text">
-    <string/>
+    <string>admin</string>
    </property>
    <property name="echoMode">
     <enum>QLineEdit::Password</enum>

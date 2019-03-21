@@ -10,8 +10,8 @@ User::User(QVector<QVariant> model)
     this->password = model[2].toString();
     this->is_blocked = model[3].toBool();
     this->is_admin = model[4].toBool();
-    this->created_at = model[5].toDate();
-    this->updated_at = model[6].toDate();
+    this->created_at = model[5].toString();
+    this->updated_at = model[6].toString();
 
     // set database table for this model
     this->table = this->getTable();
@@ -22,11 +22,8 @@ User::User(DatabaseAnswer<User>* response)
     *this = *response->getObject();
 }
 
-DatabaseAnswer<User>* User::create(QString username, QString password, bool is_blocked, bool is_admin)
+DatabaseAnswer<User>* User::create(QString username, QString password, bool is_blocked, bool is_admin, Database* db)
 {
-    // create database
-    Database* db = new Database;
-
     // hash password
     password = QString(QCryptographicHash::hash(password.toLocal8Bit(), QCryptographicHash::Md5).toHex());
 
@@ -39,9 +36,6 @@ DatabaseAnswer<User>* User::create(QString username, QString password, bool is_b
     } else {
         response = db->find<User>(User::generateFindModel(username, User::getTable()));
     }
-
-    // delete pointers object
-    delete db;
 
     // return database answer
     return response;
@@ -68,14 +62,29 @@ QString User::getTable()
     return "tblUserAuth";
 }
 
-QString User::generateUpdateModel()
+QString User::generateUpdateModel(int isBlocked)
 {
-    return "";
+    return "UPDATE " + User::getTable() + " SET is_blocked = " + QString::number(isBlocked) + " WHERE username LIKE '" + this->getUsername() + "'";
+}
+
+QString User::generateDeleteModel()
+{
+    return "DELETE FROM " + User::getTable() + " WHERE username LIKE '" + this->getUsername() + "'";
 }
 
 QString User::generateFindModel(QString username, QString table)
 {
     return "SELECT * FROM " + table + " WHERE username LIKE '" + username + "'";
+}
+
+QString User::generateFindAllModel(QString table)
+{
+    return "SELECT * FROM " + table;
+}
+
+void User::isBlocked(bool b)
+{
+    this->is_blocked = b;
 }
 
 QString User::generateSaveModel(QString username, QString password, bool is_blocked, bool is_admin)
@@ -89,7 +98,5 @@ QString User::generateSaveModel(QString username, QString password, bool is_bloc
     QDate updated_at = created_at;
 
     // statement
-    QString stmt = "INSERT INTO " + User::getTable() + " (username, password, is_blocked, is_admin, created_at, updated_at) VALUES ('" + username + "', '" + password + "', " + QString::number(isBlocked) + ", " + QString::number(isAdmin) + ", '" + created_at.toString() + "', '" + updated_at.toString() + "')";
-
-    return stmt;
+    return "INSERT INTO " + User::getTable() + " (username, password, is_blocked, is_admin, created_at, updated_at) VALUES ('" + username + "', '" + password + "', " + QString::number(isBlocked) + ", " + QString::number(isAdmin) + ", '" + created_at.toString() + "', '" + updated_at.toString() + "')";
 }
